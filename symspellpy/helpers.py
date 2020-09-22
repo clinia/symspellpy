@@ -136,9 +136,9 @@ def parse_words(phrase, preserve_case=False, split_by_space=False):
     # (underscore). Compatible with non-latin characters, does not
     # split words at apostrophes
     if preserve_case:
-        return re.findall(r"([^\W_]+['’]*[^\W_]*)", phrase)
+        return re.findall(r"([^\W_]+['’-]*[^\W_]*)", phrase)
     else:
-        return re.findall(r"([^\W_]+['’]*[^\W_]*)", phrase.lower())
+        return re.findall(r"([^\W_]+['’-]*[^\W_]*)", phrase.lower())
 
 def is_acronym(word, match_any_term_with_digits=False):
     """Checks is the word is all caps (acronym) and/or contain numbers
