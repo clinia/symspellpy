@@ -518,8 +518,8 @@ class SymSpell(object):
 
         # quick look for exact match (or if word has only one character)
         suggestion_count = 0
-        if phrase in self._words or phrase_len <= 1:
-            suggestion_count = (0 if phrase_len <= 1 else self._words[phrase])
+        if phrase in self._words or phrase_len <= 3:
+            suggestion_count = (0 if phrase_len <= 3 else self._words[phrase])
             if transfer_casing:
                 suggestions.append(SuggestItem(original_phrase, 0, suggestion_count))
             else:
